@@ -1,0 +1,15 @@
+					h1{
+						text-align:center;
+						color:white;
+					}
+					#bg{
+						background-image: url('bg3.jpg');
+						background-repeat: no-repeat;
+						background-attachment: fixed;
+						background-size: cover;
+												
+					}
+						
+					.fix{
+							width:70em;
+						}		
