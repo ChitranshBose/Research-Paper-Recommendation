@@ -1,5 +1,5 @@
 function gen_alert(){
-				debugger;
+				
 				var val;
 				final_list = [];
 				lst = ['An Empirical Study of Usages, Updates and Risks of Third-Party Libraries in Java Projects',
@@ -1002,25 +1002,39 @@ function gen_alert(){
  'Learning to Ask: Question-based Sequential Bayesian Product Search',
  'Kdhry.eps',
  'Coreset-based Strategies for Robust Center-type Problems']
+ debugger;
 				var txt = document.getElementById("paper_name").value;
-				txt_lst = txt.split(" ");
-				
-				for(let k = 0; k<txt_lst.length;k++){
+				 txt_lst = txt.split(" "); 
+				 var c =0;
+				 var f1=0;
+				 var f2=0;
+				 
+				  for(let k = 0; k<txt_lst.length;k++){ 
 					
-				
 					for(let i=0;i<lst.length;i++){
-						x = lst[i].split(" ");
+						 x = lst[i].split(" "); 
 						for(let j= 0;j<x.length;j++){
 							if(txt_lst[k]==x[j]){
-								
+								c+=1
 								val = lst[i];
-								final_list.push(val);
-								
+								final_list.push("Paper: "+c+" "+val+"\n");	
+							}
+							if(c==5){
+								f1=1;
+								break;
 							}
 						}
-				
+						if(f1==1){
+							f2=1;
+							break;
+						}
 					}
-				}
+					if(f2==1){
+						break;
+					}
+				 }  
+				 
+				 
 					if(final_list.length>0){
 						alert(final_list);
 					}
